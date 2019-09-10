@@ -16,5 +16,35 @@ namespace onving1_14
         {
             InitializeComponent();
         }
+
+        private void BtnOk_Click(object sender, EventArgs e)
+        {
+            int storlek = int.Parse(mupstorlek.Text);
+
+            FontStyle stil = FontStyle.Regular;
+
+            if (cbxFet.Checked)
+            {
+                stil = stil | FontStyle.Bold;
+            }
+            if (cbxkursiv.Checked)
+            {
+                stil = stil | FontStyle.Italic;
+            }
+            
+
+
+            Font font = new Font(tbxtext.Text, storlek , stil);
+            tbxtext.Font = font;
+
+
+
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
