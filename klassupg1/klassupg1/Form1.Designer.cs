@@ -37,7 +37,6 @@
             this.btnboka = new System.Windows.Forms.Button();
             this.btnsearch = new System.Windows.Forms.Button();
             this.lblsearch = new System.Windows.Forms.Label();
-            this.lblsearchname = new System.Windows.Forms.Label();
             this.tbxsearch = new System.Windows.Forms.TextBox();
             this.lbxlista = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
@@ -108,24 +107,16 @@
             this.btnsearch.TabIndex = 7;
             this.btnsearch.Text = "Sök";
             this.btnsearch.UseVisualStyleBackColor = true;
+            this.btnsearch.Click += new System.EventHandler(this.Btnsearch_Click);
             // 
             // lblsearch
             // 
             this.lblsearch.AutoSize = true;
-            this.lblsearch.Location = new System.Drawing.Point(16, 211);
+            this.lblsearch.Location = new System.Drawing.Point(61, 212);
             this.lblsearch.Name = "lblsearch";
-            this.lblsearch.Size = new System.Drawing.Size(53, 13);
+            this.lblsearch.Size = new System.Drawing.Size(125, 13);
             this.lblsearch.TabIndex = 8;
-            this.lblsearch.Text = "Sök kund";
-            // 
-            // lblsearchname
-            // 
-            this.lblsearchname.AutoSize = true;
-            this.lblsearchname.Location = new System.Drawing.Point(25, 233);
-            this.lblsearchname.Name = "lblsearchname";
-            this.lblsearchname.Size = new System.Drawing.Size(33, 13);
-            this.lblsearchname.TabIndex = 9;
-            this.lblsearchname.Text = "namn";
+            this.lblsearch.Text = "Sök kund eller distination";
             // 
             // tbxsearch
             // 
@@ -149,7 +140,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lbxlista);
             this.Controls.Add(this.tbxsearch);
-            this.Controls.Add(this.lblsearchname);
             this.Controls.Add(this.lblsearch);
             this.Controls.Add(this.btnsearch);
             this.Controls.Add(this.btnboka);
@@ -177,7 +167,6 @@
         private System.Windows.Forms.Button btnboka;
         private System.Windows.Forms.Button btnsearch;
         private System.Windows.Forms.Label lblsearch;
-        private System.Windows.Forms.Label lblsearchname;
         private System.Windows.Forms.TextBox tbxsearch;
         private System.Windows.Forms.ListBox lbxlista;
     }
