@@ -10,12 +10,14 @@ namespace klasupg3
     {
         double _time = 0;
         double _distance = 0;
+        double _speed = 0;
 
 
-        public distance(double tid, double distans)
+        public distance(double tid, double distans, double speed)
         {
             this._time = tid;
             this._distance = distans;
+            this._speed = speed;
         }
 
         public double Time
@@ -23,6 +25,20 @@ namespace klasupg3
             get
             {
                 return _time;
+            }
+        }
+        public double Distance
+        {
+            get
+            {
+                return _distance;
+            }
+        }
+        public double SPEED
+        {
+            get
+            {
+                return _speed;
             }
         }
     }

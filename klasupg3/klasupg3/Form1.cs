@@ -23,8 +23,8 @@ namespace klasupg3
         {
             double sträcka = double.Parse(tbxs.Text);
             double tid = double.Parse(tbxt.Text);
-
-            distance calculate = new distance(tid, sträcka);
+            double fart = (sträcka * 1000) / (tid * 60);
+            distance calculate = new distance(tid, sträcka, fart);
 
             Distances.Add(calculate);
 
@@ -40,7 +40,7 @@ namespace klasupg3
             {
                 if (search == Distances[i].Time)
                 {
-                    lbxlista.Items.Add( Distances[i].Time ) ;
+                    lbxlista.Items.Add( Distances[i].Distance + " km") ;
                 }
 
             }
@@ -55,7 +55,12 @@ namespace klasupg3
 
             for (int i = 0; i <  varv; i++)
             {
-                if (search == Distances[i])
+                if (search == Distances[i].Distance)
+                {
+                    lbxlista.Items.Add(Distances[i].SPEED + " m/s");
+                }
+
+                        
             }
         }
     }
