@@ -48,5 +48,10 @@ namespace klass_5
                 return _tid;
             }
         }
+
+        public override string ToString()
+        {
+            return this._kund + ": " + this._tid + " min";
+        }
     }
 }

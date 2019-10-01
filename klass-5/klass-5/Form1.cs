@@ -27,7 +27,7 @@ namespace klass_5
 
             //int antal = Rap.antalkunder;
             Rapport.Add(rapport);
-            lbxlista.Items.Add(kund + " " + tid);
+            lbxlista.Items.Add(rapport);
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -37,27 +37,41 @@ namespace klass_5
             string gammalt = tbxGammaltnamn.Text;
             string nytt = tbxNyttnamn.Text;
             int antal = Rap.antalkunder;
-            for (int i = 0; i < antal; i++)
+
+            //---------------------------------------------------------------------
+
+            /*for (int i = 0; i < antal; i++)
             {
                 if (gammalt == Rapport[i].Kund)
                 {
                     Rapport[i].Kund = nytt;
                     //Rapport[i].ändraKund(nytt);
                 }
-            }
+                lbxlista.Items.Add(Rapport[i]);
+            }*/
+            
+
             foreach(Rap r in Rapport)
             {
                 if (gammalt == r.Kund)
                 {
                     r.Kund = nytt;
                 }
+                lbxlista.Items.Add(r);
             }
 
-            //for (int i = 0; i < antal; i++)
-            //{
-            //    lbxlista.Items.Add(rapport);
-            //}
+            //---------------------------------------------------------------------
+        }
 
+        private void Button3_Click(object sender, EventArgs e)
+        {            
+            //Rap r = (Rap)lbxlista.SelectedItem;
+            Rap r = lbxlista.SelectedItem as Rap;
+            if (r != null)
+            {
+                tbxpris.Text = Math.Round((float)(r.Tid / 30), 0) * int.Parse(tbxTidvode.Text) / 2 + " kr";
+            }
+            else {MessageBox.Show("Verkar som någon har gått på LBS :) ");}
         }
     }
 }
