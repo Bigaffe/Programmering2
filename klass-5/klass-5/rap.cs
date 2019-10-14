@@ -43,15 +43,15 @@ namespace klass_5
 
         public int Tid
         {
-            get
-            {
+          get
+          {
                 return _tid;
-            }
+          }
         }
 
         public override string ToString()
         {
-            return this._kund + ": " + this._tid + " min";
+           return this._kund + ": " + this._tid + " min";
         }
     }
 }
