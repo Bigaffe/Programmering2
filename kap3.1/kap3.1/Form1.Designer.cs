@@ -40,14 +40,31 @@
             this.tpgmusik = new System.Windows.Forms.TabPage();
             this.tbgfilm = new System.Windows.Forms.TabPage();
             this.tbpljudbok = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tbppodradio = new System.Windows.Forms.TabPage();
             this.tbpappar = new System.Windows.Forms.TabPage();
             this.btnadd = new System.Windows.Forms.Button();
             this.tbxtext = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.colfornamn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDataGrid = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnFotboll = new System.Windows.Forms.Button();
+            this.btnmal = new System.Windows.Forms.Button();
             this.musMenu.SuspendLayout();
             this.tabcontrolen.SuspendLayout();
             this.tbpljudbok.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // musMenu
@@ -56,7 +73,7 @@
             this.väljFärgToolStripMenuItem});
             this.musMenu.Location = new System.Drawing.Point(0, 0);
             this.musMenu.Name = "musMenu";
-            this.musMenu.Size = new System.Drawing.Size(610, 24);
+            this.musMenu.Size = new System.Drawing.Size(822, 24);
             this.musMenu.TabIndex = 0;
             this.musMenu.Text = "Menu";
             // 
@@ -73,7 +90,7 @@
             // väljFärgToolStripMenuItem1
             // 
             this.väljFärgToolStripMenuItem1.Name = "väljFärgToolStripMenuItem1";
-            this.väljFärgToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.väljFärgToolStripMenuItem1.Size = new System.Drawing.Size(153, 22);
             this.väljFärgToolStripMenuItem1.Text = "Välj färg";
             this.väljFärgToolStripMenuItem1.ToolTipText = "Öppnar en dialogruta där du kan välja en bakrundsfärg";
             this.väljFärgToolStripMenuItem1.Click += new System.EventHandler(this.VäljFärgToolStripMenuItem1_Click);
@@ -81,7 +98,7 @@
             // väljMappToolStripMenuItem
             // 
             this.väljMappToolStripMenuItem.Name = "väljMappToolStripMenuItem";
-            this.väljMappToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.väljMappToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.väljMappToolStripMenuItem.Text = "Välj mapp";
             this.väljMappToolStripMenuItem.ToolTipText = "Öppnar en dialogruta där du kan välja en sökväg";
             this.väljMappToolStripMenuItem.Click += new System.EventHandler(this.VäljMappToolStripMenuItem_Click);
@@ -89,7 +106,7 @@
             // väljTeckensnittToolStripMenuItem
             // 
             this.väljTeckensnittToolStripMenuItem.Name = "väljTeckensnittToolStripMenuItem";
-            this.väljTeckensnittToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.väljTeckensnittToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.väljTeckensnittToolStripMenuItem.Text = "Välj teckensnitt";
             this.väljTeckensnittToolStripMenuItem.ToolTipText = "Öppnar en dialogaruta där du kan välja teckensnitt";
             this.väljTeckensnittToolStripMenuItem.Click += new System.EventHandler(this.VäljTeckensnittToolStripMenuItem_Click);
@@ -138,12 +155,19 @@
             this.tbpljudbok.Text = "Ljudböcker";
             this.tbpljudbok.UseVisualStyleBackColor = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(7, 7);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 0;
+            // 
             // tbppodradio
             // 
             this.tbppodradio.Location = new System.Drawing.Point(4, 22);
             this.tbppodradio.Name = "tbppodradio";
             this.tbppodradio.Padding = new System.Windows.Forms.Padding(3);
-            this.tbppodradio.Size = new System.Drawing.Size(285, 150);
+            this.tbppodradio.Size = new System.Drawing.Size(240, 150);
             this.tbppodradio.TabIndex = 3;
             this.tbppodradio.Text = "Podradio";
             this.tbppodradio.UseVisualStyleBackColor = true;
@@ -153,7 +177,7 @@
             this.tbpappar.Location = new System.Drawing.Point(4, 22);
             this.tbpappar.Name = "tbpappar";
             this.tbpappar.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpappar.Size = new System.Drawing.Size(285, 150);
+            this.tbpappar.Size = new System.Drawing.Size(240, 150);
             this.tbpappar.TabIndex = 4;
             this.tbpappar.Text = "Appar";
             this.tbpappar.UseVisualStyleBackColor = true;
@@ -175,18 +199,137 @@
             this.tbxtext.Size = new System.Drawing.Size(100, 20);
             this.tbxtext.TabIndex = 3;
             // 
-            // textBox1
+            // dataGridView1
             // 
-            this.textBox1.Location = new System.Drawing.Point(7, 7);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colfornamn,
+            this.col2,
+            this.col3});
+            this.dataGridView1.Location = new System.Drawing.Point(289, 49);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(281, 150);
+            this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
+            // 
+            // colfornamn
+            // 
+            this.colfornamn.FillWeight = 88.92634F;
+            this.colfornamn.HeaderText = "Förnamn";
+            this.colfornamn.Name = "colfornamn";
+            this.colfornamn.Width = 80;
+            // 
+            // col2
+            // 
+            this.col2.FillWeight = 98.98477F;
+            this.col2.HeaderText = "Efternamn";
+            this.col2.Name = "col2";
+            this.col2.Width = 80;
+            // 
+            // col3
+            // 
+            this.col3.FillWeight = 112.0889F;
+            this.col3.HeaderText = "Telefonnummer";
+            this.col3.Name = "col3";
+            this.col3.Width = 80;
+            // 
+            // btnDataGrid
+            // 
+            this.btnDataGrid.Location = new System.Drawing.Point(345, 209);
+            this.btnDataGrid.Name = "btnDataGrid";
+            this.btnDataGrid.Size = new System.Drawing.Size(88, 23);
+            this.btnDataGrid.TabIndex = 5;
+            this.btnDataGrid.Text = "DataGridView";
+            this.btnDataGrid.UseVisualStyleBackColor = true;
+            this.btnDataGrid.Click += new System.EventHandler(this.BtnDataGrid_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(577, 69);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 6;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(577, 96);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.TabIndex = 7;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(577, 123);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.TabIndex = 8;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
+            this.dataGridView2.Location = new System.Drawing.Point(289, 308);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(388, 206);
+            this.dataGridView2.TabIndex = 9;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Hemmalag";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Bortalag";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Mål (H)";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Mål (B)";
+            this.Column4.Name = "Column4";
+            // 
+            // btnFotboll
+            // 
+            this.btnFotboll.Location = new System.Drawing.Point(417, 520);
+            this.btnFotboll.Name = "btnFotboll";
+            this.btnFotboll.Size = new System.Drawing.Size(153, 23);
+            this.btnFotboll.TabIndex = 10;
+            this.btnFotboll.Text = "H O C K E Y HOCKEY!";
+            this.btnFotboll.UseVisualStyleBackColor = true;
+            this.btnFotboll.Click += new System.EventHandler(this.BtnFotboll_Click);
+            // 
+            // btnmal
+            // 
+            this.btnmal.Location = new System.Drawing.Point(455, 546);
+            this.btnmal.Name = "btnmal";
+            this.btnmal.Size = new System.Drawing.Size(75, 23);
+            this.btnmal.TabIndex = 11;
+            this.btnmal.Text = "GOAL!";
+            this.btnmal.UseVisualStyleBackColor = true;
+            this.btnmal.Click += new System.EventHandler(this.Btnmal_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(610, 427);
+            this.ClientSize = new System.Drawing.Size(822, 581);
+            this.Controls.Add(this.btnmal);
+            this.Controls.Add(this.btnFotboll);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.btnDataGrid);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.tbxtext);
             this.Controls.Add(this.btnadd);
             this.Controls.Add(this.tabcontrolen);
@@ -199,6 +342,8 @@
             this.tabcontrolen.ResumeLayout(false);
             this.tbpljudbok.ResumeLayout(false);
             this.tbpljudbok.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,6 +368,21 @@
         private System.Windows.Forms.Button btnadd;
         private System.Windows.Forms.TextBox tbxtext;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colfornamn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col3;
+        private System.Windows.Forms.Button btnDataGrid;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.Button btnFotboll;
+        private System.Windows.Forms.Button btnmal;
     }
 }
 
