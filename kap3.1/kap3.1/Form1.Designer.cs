@@ -60,6 +60,8 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnFotboll = new System.Windows.Forms.Button();
             this.btnmal = new System.Windows.Forms.Button();
+            this.btnUpp = new System.Windows.Forms.Button();
+            this.btnNer = new System.Windows.Forms.Button();
             this.musMenu.SuspendLayout();
             this.tabcontrolen.SuspendLayout();
             this.tbpljudbok.SuspendLayout();
@@ -317,11 +319,33 @@
             this.btnmal.UseVisualStyleBackColor = true;
             this.btnmal.Click += new System.EventHandler(this.Btnmal_Click);
             // 
+            // btnUpp
+            // 
+            this.btnUpp.Location = new System.Drawing.Point(684, 418);
+            this.btnUpp.Name = "btnUpp";
+            this.btnUpp.Size = new System.Drawing.Size(75, 23);
+            this.btnUpp.TabIndex = 12;
+            this.btnUpp.Text = "Upp";
+            this.btnUpp.UseVisualStyleBackColor = true;
+            this.btnUpp.Click += new System.EventHandler(this.BtnUpp_Click);
+            // 
+            // btnNer
+            // 
+            this.btnNer.Location = new System.Drawing.Point(684, 448);
+            this.btnNer.Name = "btnNer";
+            this.btnNer.Size = new System.Drawing.Size(75, 23);
+            this.btnNer.TabIndex = 13;
+            this.btnNer.Text = "Ner";
+            this.btnNer.UseVisualStyleBackColor = true;
+            this.btnNer.Click += new System.EventHandler(this.BtnNer_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 581);
+            this.Controls.Add(this.btnNer);
+            this.Controls.Add(this.btnUpp);
             this.Controls.Add(this.btnmal);
             this.Controls.Add(this.btnFotboll);
             this.Controls.Add(this.dataGridView2);
@@ -383,6 +407,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Button btnFotboll;
         private System.Windows.Forms.Button btnmal;
+        private System.Windows.Forms.Button btnUpp;
+        private System.Windows.Forms.Button btnNer;
     }
 }
 

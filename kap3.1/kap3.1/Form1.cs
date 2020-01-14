@@ -93,5 +93,131 @@ namespace kap3._1
             MessageBox.Show("Största målskillnaden var " + biggestgoalie);
         }
 
+        private void BtnUpp_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(dataGridView2.SelectedRows.Count.ToString());
+            if (dataGridView2.SelectedRows.Count == 1)
+            {
+                /*if (dataGridView2.SelectedRows.Cast<DataGridViewCell>().Select(c => c.RowIndex).Distinct().Count() > 1)
+                {
+                    MessageBox.Show("Vänligen välj från samma rad");
+                    btnNer.Text = "Test1";
+                }*/
+
+                int rader = 0;
+                DataGridViewRow rad = dataGridView2.SelectedRows[0];
+                int raden = rad.Index;
+                int kolumner = dataGridView2.SelectedCells.Count;
+                string ord = "";
+                for (int i = 0; i < kolumner; i++)
+                {
+                    if (dataGridView2.Rows[raden - 1].Cells[i].Value.ToString() != null || dataGridView2.Rows[raden].Cells[i].Value.ToString() != null)
+                    {
+                        ord = dataGridView2.Rows[raden - 1].Cells[i].Value.ToString();
+                        btnadd.Text = ord;
+                        dataGridView2.Rows[raden - 1].Cells[i].Value = dataGridView2.Rows[raden].Cells[i].Value;
+                        dataGridView2.Rows[raden].Cells[i].Value = ord;
+                    }
+                    else { MessageBox.Show("någon av raderna har en tom ruta"); }
+                }
+
+                /*
+                    int raden = rad.Index;
+                    for ( int i = 0; i < 2; i--){
+                    if ( dataGridView2.SelectedCells[i].Value != null)
+                    {
+
+                    }
+                    else { i = 10; }
+                    rader++;
+                    
+                }
+                string ord = "";
+                    for (int i = 0; i < rader; i++)
+                {
+                    ord = rad.Cells[i].Value.ToString();
+                    dataGridView2.Rows[raden - 1].Cells[i].Value = dataGridView2.Rows[raden].Cells[i].Value;
+                    dataGridView2.Rows[raden].Cells[i].Value = ord;
+                    
+                }
+                        */
+                btnNer.Text = "Test2";
+
+            }
+            else  /*(dataGridView2.SelectedRows.Count >= 1)*/
+            {
+                MessageBox.Show("Vänligen välj bara en rad!");
+                btnNer.Text = "Test3";
+            }
+
+            /*else if (dataGridView2.SelectedRows.Cast<DataGridViewCell>().Select(c => c.RowIndex).Distinct().Count() > 1)
+            {
+                MessageBox.Show("Vänligen välj från samma rad");
+            }*/
+        }
+    
+
+        private void BtnNer_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(dataGridView2.SelectedRows.Count.ToString());
+            if (dataGridView2.SelectedRows.Count == 1)
+            {
+                /*if (dataGridView2.SelectedRows.Cast<DataGridViewCell>().Select(c => c.RowIndex).Distinct().Count() > 1)
+                {
+                    MessageBox.Show("Vänligen välj från samma rad");
+                    btnNer.Text = "Test1";
+                }*/
+
+                    int rader = 0;
+                    DataGridViewRow rad = dataGridView2.SelectedRows[0];
+                    int raden = rad.Index;
+                int kolumner = dataGridView2.SelectedCells.Count;
+                string ord = "";
+                for ( int i = 0; i < kolumner; i++)
+                {
+                    if (dataGridView2.Rows[raden + 1].Cells[i].Value.ToString() != null || dataGridView2.Rows[raden].Cells[i].Value.ToString() != null)
+                    {
+                        ord = dataGridView2.Rows[raden + 1].Cells[i].Value.ToString();
+                        btnadd.Text = ord;
+                        dataGridView2.Rows[raden + 1].Cells[i].Value = dataGridView2.Rows[raden].Cells[i].Value;
+                        dataGridView2.Rows[raden].Cells[i].Value = ord;
+                    }
+                    else { MessageBox.Show("någon av raderna har en tom ruta"); }
+                }
+
+                /*
+                    int raden = rad.Index;
+                    for ( int i = 0; i < 2; i--){
+                    if ( dataGridView2.SelectedCells[i].Value != null)
+                    {
+
+                    }
+                    else { i = 10; }
+                    rader++;
+                    
+                }
+                string ord = "";
+                    for (int i = 0; i < rader; i++)
+                {
+                    ord = rad.Cells[i].Value.ToString();
+                    dataGridView2.Rows[raden - 1].Cells[i].Value = dataGridView2.Rows[raden].Cells[i].Value;
+                    dataGridView2.Rows[raden].Cells[i].Value = ord;
+                    
+                }
+                        */
+                    btnNer.Text = "Test2";
+                
+            }
+            else  /*(dataGridView2.SelectedRows.Count >= 1)*/
+            {
+                MessageBox.Show("Vänligen välj bara en rad!");
+                btnNer.Text = "Test3";
+            }
+            
+            /*else if (dataGridView2.SelectedRows.Cast<DataGridViewCell>().Select(c => c.RowIndex).Distinct().Count() > 1)
+            {
+                MessageBox.Show("Vänligen välj från samma rad");
+            }*/
+        }
     }
 }
