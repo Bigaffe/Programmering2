@@ -12,6 +12,9 @@ namespace kap3._1
 {
     public partial class Form1 : Form
     {
+        int[] textvara = new int[100];
+        int[] textnamn = new int[100];
+        int ojoj = 0;
         public Form1()
         {
             InitializeComponent();
@@ -218,6 +221,23 @@ namespace kap3._1
             {
                 MessageBox.Show("Vänligen välj från samma rad");
             }*/
+        }
+
+        private void Btnkund_Click(object sender, EventArgs e)
+        {
+            TextBox text = new TextBox();
+            TextBox vara = new TextBox();
+            int ypos = btnkund.Location.Y;
+            text.Size = new System.Drawing.Size(100, 200);
+            text.Location = new Point(16, ypos + 30);
+            vara.Size = new System.Drawing.Size(100, 20);
+            vara.Location = new Point(122, ypos + 30);
+
+            btnkund.Location = new Point(btnkund.Location.X, ypos + 30);
+
+
+            this.Controls.Add(vara);
+            this.Controls.Add(text);
         }
     }
 }

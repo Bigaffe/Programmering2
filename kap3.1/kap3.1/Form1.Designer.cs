@@ -62,6 +62,10 @@
             this.btnmal = new System.Windows.Forms.Button();
             this.btnUpp = new System.Windows.Forms.Button();
             this.btnNer = new System.Windows.Forms.Button();
+            this.tbxvara = new System.Windows.Forms.TextBox();
+            this.tbxpris = new System.Windows.Forms.TextBox();
+            this.btnkund = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.musMenu.SuspendLayout();
             this.tabcontrolen.SuspendLayout();
             this.tbpljudbok.SuspendLayout();
@@ -123,7 +127,7 @@
             this.tabcontrolen.Location = new System.Drawing.Point(12, 27);
             this.tabcontrolen.Name = "tabcontrolen";
             this.tabcontrolen.SelectedIndex = 0;
-            this.tabcontrolen.Size = new System.Drawing.Size(248, 176);
+            this.tabcontrolen.Size = new System.Drawing.Size(166, 76);
             this.tabcontrolen.TabIndex = 1;
             // 
             // tpgmusik
@@ -131,7 +135,7 @@
             this.tpgmusik.Location = new System.Drawing.Point(4, 22);
             this.tpgmusik.Name = "tpgmusik";
             this.tpgmusik.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgmusik.Size = new System.Drawing.Size(240, 150);
+            this.tpgmusik.Size = new System.Drawing.Size(158, 50);
             this.tpgmusik.TabIndex = 0;
             this.tpgmusik.Text = "Musik";
             this.tpgmusik.UseVisualStyleBackColor = true;
@@ -186,7 +190,7 @@
             // 
             // btnadd
             // 
-            this.btnadd.Location = new System.Drawing.Point(16, 210);
+            this.btnadd.Location = new System.Drawing.Point(12, 105);
             this.btnadd.Name = "btnadd";
             this.btnadd.Size = new System.Drawing.Size(75, 23);
             this.btnadd.TabIndex = 2;
@@ -196,9 +200,9 @@
             // 
             // tbxtext
             // 
-            this.tbxtext.Location = new System.Drawing.Point(98, 210);
+            this.tbxtext.Location = new System.Drawing.Point(93, 107);
             this.tbxtext.Name = "tbxtext";
-            this.tbxtext.Size = new System.Drawing.Size(100, 20);
+            this.tbxtext.Size = new System.Drawing.Size(81, 20);
             this.tbxtext.TabIndex = 3;
             // 
             // dataGridView1
@@ -208,7 +212,7 @@
             this.colfornamn,
             this.col2,
             this.col3});
-            this.dataGridView1.Location = new System.Drawing.Point(289, 49);
+            this.dataGridView1.Location = new System.Drawing.Point(184, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(281, 150);
             this.dataGridView1.TabIndex = 4;
@@ -237,7 +241,7 @@
             // 
             // btnDataGrid
             // 
-            this.btnDataGrid.Location = new System.Drawing.Point(345, 209);
+            this.btnDataGrid.Location = new System.Drawing.Point(471, 90);
             this.btnDataGrid.Name = "btnDataGrid";
             this.btnDataGrid.Size = new System.Drawing.Size(88, 23);
             this.btnDataGrid.TabIndex = 5;
@@ -247,21 +251,21 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(577, 69);
+            this.textBox2.Location = new System.Drawing.Point(471, 12);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 6;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(577, 96);
+            this.textBox3.Location = new System.Drawing.Point(471, 38);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 7;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(577, 123);
+            this.textBox4.Location = new System.Drawing.Point(471, 64);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 8;
@@ -274,9 +278,9 @@
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dataGridView2.Location = new System.Drawing.Point(289, 308);
+            this.dataGridView2.Location = new System.Drawing.Point(12, 168);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(388, 206);
+            this.dataGridView2.Size = new System.Drawing.Size(453, 142);
             this.dataGridView2.TabIndex = 9;
             // 
             // Column1
@@ -301,9 +305,9 @@
             // 
             // btnFotboll
             // 
-            this.btnFotboll.Location = new System.Drawing.Point(417, 520);
+            this.btnFotboll.Location = new System.Drawing.Point(471, 226);
             this.btnFotboll.Name = "btnFotboll";
-            this.btnFotboll.Size = new System.Drawing.Size(153, 23);
+            this.btnFotboll.Size = new System.Drawing.Size(75, 23);
             this.btnFotboll.TabIndex = 10;
             this.btnFotboll.Text = "H O C K E Y HOCKEY!";
             this.btnFotboll.UseVisualStyleBackColor = true;
@@ -311,7 +315,7 @@
             // 
             // btnmal
             // 
-            this.btnmal.Location = new System.Drawing.Point(455, 546);
+            this.btnmal.Location = new System.Drawing.Point(471, 255);
             this.btnmal.Name = "btnmal";
             this.btnmal.Size = new System.Drawing.Size(75, 23);
             this.btnmal.TabIndex = 11;
@@ -321,7 +325,7 @@
             // 
             // btnUpp
             // 
-            this.btnUpp.Location = new System.Drawing.Point(684, 418);
+            this.btnUpp.Location = new System.Drawing.Point(471, 168);
             this.btnUpp.Name = "btnUpp";
             this.btnUpp.Size = new System.Drawing.Size(75, 23);
             this.btnUpp.TabIndex = 12;
@@ -331,7 +335,7 @@
             // 
             // btnNer
             // 
-            this.btnNer.Location = new System.Drawing.Point(684, 448);
+            this.btnNer.Location = new System.Drawing.Point(471, 197);
             this.btnNer.Name = "btnNer";
             this.btnNer.Size = new System.Drawing.Size(75, 23);
             this.btnNer.TabIndex = 13;
@@ -339,11 +343,48 @@
             this.btnNer.UseVisualStyleBackColor = true;
             this.btnNer.Click += new System.EventHandler(this.BtnNer_Click);
             // 
+            // tbxvara
+            // 
+            this.tbxvara.Location = new System.Drawing.Point(16, 335);
+            this.tbxvara.Name = "tbxvara";
+            this.tbxvara.Size = new System.Drawing.Size(100, 20);
+            this.tbxvara.TabIndex = 14;
+            // 
+            // tbxpris
+            // 
+            this.tbxpris.Location = new System.Drawing.Point(122, 335);
+            this.tbxpris.Name = "tbxpris";
+            this.tbxpris.Size = new System.Drawing.Size(100, 20);
+            this.tbxpris.TabIndex = 15;
+            // 
+            // btnkund
+            // 
+            this.btnkund.Location = new System.Drawing.Point(240, 335);
+            this.btnkund.Name = "btnkund";
+            this.btnkund.Size = new System.Drawing.Size(20, 23);
+            this.btnkund.TabIndex = 16;
+            this.btnkund.Text = "+";
+            this.btnkund.UseVisualStyleBackColor = true;
+            this.btnkund.Click += new System.EventHandler(this.Btnkund_Click);
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(324, 335);
+            this.textBox5.MaxLength = 140;
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(100, 20);
+            this.textBox5.TabIndex = 17;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 581);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.btnkund);
+            this.Controls.Add(this.tbxpris);
+            this.Controls.Add(this.tbxvara);
             this.Controls.Add(this.btnNer);
             this.Controls.Add(this.btnUpp);
             this.Controls.Add(this.btnmal);
@@ -409,6 +450,10 @@
         private System.Windows.Forms.Button btnmal;
         private System.Windows.Forms.Button btnUpp;
         private System.Windows.Forms.Button btnNer;
+        private System.Windows.Forms.TextBox tbxvara;
+        private System.Windows.Forms.TextBox tbxpris;
+        private System.Windows.Forms.Button btnkund;
+        private System.Windows.Forms.TextBox textBox5;
     }
 }
 
