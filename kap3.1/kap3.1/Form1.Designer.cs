@@ -145,7 +145,7 @@
             this.tbgfilm.Location = new System.Drawing.Point(4, 22);
             this.tbgfilm.Name = "tbgfilm";
             this.tbgfilm.Padding = new System.Windows.Forms.Padding(3);
-            this.tbgfilm.Size = new System.Drawing.Size(240, 150);
+            this.tbgfilm.Size = new System.Drawing.Size(158, 50);
             this.tbgfilm.TabIndex = 1;
             this.tbgfilm.Text = "Film";
             this.tbgfilm.UseVisualStyleBackColor = true;
@@ -156,7 +156,7 @@
             this.tbpljudbok.Location = new System.Drawing.Point(4, 22);
             this.tbpljudbok.Name = "tbpljudbok";
             this.tbpljudbok.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpljudbok.Size = new System.Drawing.Size(240, 150);
+            this.tbpljudbok.Size = new System.Drawing.Size(158, 50);
             this.tbpljudbok.TabIndex = 2;
             this.tbpljudbok.Text = "Ljudböcker";
             this.tbpljudbok.UseVisualStyleBackColor = true;
@@ -173,7 +173,7 @@
             this.tbppodradio.Location = new System.Drawing.Point(4, 22);
             this.tbppodradio.Name = "tbppodradio";
             this.tbppodradio.Padding = new System.Windows.Forms.Padding(3);
-            this.tbppodradio.Size = new System.Drawing.Size(240, 150);
+            this.tbppodradio.Size = new System.Drawing.Size(158, 50);
             this.tbppodradio.TabIndex = 3;
             this.tbppodradio.Text = "Podradio";
             this.tbppodradio.UseVisualStyleBackColor = true;
@@ -183,7 +183,7 @@
             this.tbpappar.Location = new System.Drawing.Point(4, 22);
             this.tbpappar.Name = "tbpappar";
             this.tbpappar.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpappar.Size = new System.Drawing.Size(240, 150);
+            this.tbpappar.Size = new System.Drawing.Size(158, 50);
             this.tbpappar.TabIndex = 4;
             this.tbpappar.Text = "Appar";
             this.tbpappar.UseVisualStyleBackColor = true;

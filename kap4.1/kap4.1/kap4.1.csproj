@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0D547167-B769-4CC2-9EA3-4E6AEA5ABFD1}</ProjectGuid>
+    <ProjectGuid>{CFF5F5E3-FE2E-4A03-B37E-3B825BF4FBB4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>kap3._1</RootNamespace>
-    <AssemblyName>kap3.1</AssemblyName>
+    <RootNamespace>kap4._1</RootNamespace>
+    <AssemblyName>kap4.1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,24 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AAuser.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="AAuser.Designer.cs">
-      <DependentUpon>AAuser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="aUC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="aUC.Designer.cs">
-      <DependentUpon>aUC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ensistagang.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ensistagang.Designer.cs">
-      <DependentUpon>ensistagang.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,30 +54,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControl2.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl2.Designer.cs">
-      <DependentUpon>UserControl2.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="AAuser.resx">
-      <DependentUpon>AAuser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="aUC.resx">
-      <DependentUpon>aUC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ensistagang.resx">
-      <DependentUpon>ensistagang.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="obj\Debug\kap3._1.aUC.resources" />
-    <EmbeddedResource Include="obj\Debug\kap3._1.ensistagang.resources" />
-    <EmbeddedResource Include="obj\Debug\kap3._1.Form1.resources" />
-    <EmbeddedResource Include="obj\Debug\kap3._1.LimitedTextBox.resources" />
-    <EmbeddedResource Include="obj\Debug\kap3._1.Properties.Resources.resources" />
-    <EmbeddedResource Include="obj\Debug\kap3._1.UserControl2.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -105,15 +66,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserControl2.resx">
-      <DependentUpon>UserControl2.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="bin\Debug\kap3.1.exe.config" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="obj\Debug\kap3.1.csproj.CoreCompileInputs.cache" />
-    <None Include="obj\Debug\kap3.1.csproj.GenerateResource.cache" />
-    <None Include="obj\Release\kap3.1.csproj.CoreCompileInputs.cache" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -126,17 +78,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="bin\Debug\kap3.1.exe" />
-    <Content Include="bin\Debug\kap3.1.pdb" />
-    <Content Include="obj\Debug\kap3.1.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\kap3.1.exe" />
-    <Content Include="obj\Debug\kap3.1.pdb" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="bin\Release\" />
-    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
