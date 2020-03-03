@@ -30,7 +30,8 @@
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnanslut = new System.Windows.Forms.Button();
-            this.btnsend = new System.Windows.Forms.Button();
+            this.Btnsend = new System.Windows.Forms.Button();
+            this.tbxmessage = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // textBox1
@@ -46,26 +47,35 @@
             this.btnanslut.Name = "btnanslut";
             this.btnanslut.Size = new System.Drawing.Size(75, 23);
             this.btnanslut.TabIndex = 1;
-            this.btnanslut.Text = "button1";
+            this.btnanslut.Text = "Anslut";
             this.btnanslut.UseVisualStyleBackColor = true;
-            this.btnanslut.Click += new System.EventHandler(this.Btnanslut_Click);
+            this.btnanslut.Click += new System.EventHandler(this.Btnanslut_Click_1);
             // 
-            // btnsend
+            // Btnsend
             // 
-            this.btnsend.Location = new System.Drawing.Point(13, 40);
-            this.btnsend.Name = "btnsend";
-            this.btnsend.Size = new System.Drawing.Size(75, 23);
-            this.btnsend.TabIndex = 2;
-            this.btnsend.Text = "button2";
-            this.btnsend.UseVisualStyleBackColor = true;
-            this.btnsend.Click += new System.EventHandler(this.Btnsend_Click);
+            this.Btnsend.Location = new System.Drawing.Point(119, 35);
+            this.Btnsend.Name = "Btnsend";
+            this.Btnsend.Size = new System.Drawing.Size(75, 23);
+            this.Btnsend.TabIndex = 2;
+            this.Btnsend.Text = "Skicka";
+            this.Btnsend.UseVisualStyleBackColor = true;
+            this.Btnsend.Click += new System.EventHandler(this.Btnsend_Click);
+            // 
+            // tbxmessage
+            // 
+            this.tbxmessage.Location = new System.Drawing.Point(13, 64);
+            this.tbxmessage.Multiline = true;
+            this.tbxmessage.Name = "tbxmessage";
+            this.tbxmessage.Size = new System.Drawing.Size(181, 97);
+            this.tbxmessage.TabIndex = 3;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnsend);
+            this.ClientSize = new System.Drawing.Size(203, 172);
+            this.Controls.Add(this.tbxmessage);
+            this.Controls.Add(this.Btnsend);
             this.Controls.Add(this.btnanslut);
             this.Controls.Add(this.textBox1);
             this.Name = "Form1";
@@ -79,7 +89,8 @@
 
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnanslut;
-        private System.Windows.Forms.Button btnsend;
+        private System.Windows.Forms.Button Btnsend;
+        private System.Windows.Forms.TextBox tbxmessage;
     }
 }
 
