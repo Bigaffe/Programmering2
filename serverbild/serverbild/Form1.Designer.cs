@@ -34,7 +34,7 @@
             // lblAirplane
             // 
             this.lblAirplane.AutoSize = true;
-            this.lblAirplane.Location = new System.Drawing.Point(285, 186);
+            this.lblAirplane.Location = new System.Drawing.Point(280, 180);
             this.lblAirplane.Name = "lblAirplane";
             this.lblAirplane.Size = new System.Drawing.Size(45, 13);
             this.lblAirplane.TabIndex = 0;
@@ -44,7 +44,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.lblAirplane);
             this.Name = "Form1";
             this.Text = "Form1";

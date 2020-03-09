@@ -55,6 +55,7 @@
             // 
             // btnUpp
             // 
+            this.btnUpp.Enabled = false;
             this.btnUpp.Location = new System.Drawing.Point(125, 76);
             this.btnUpp.Name = "btnUpp";
             this.btnUpp.Size = new System.Drawing.Size(127, 60);
@@ -65,6 +66,7 @@
             // 
             // btnLeft
             // 
+            this.btnLeft.Enabled = false;
             this.btnLeft.Location = new System.Drawing.Point(1, 142);
             this.btnLeft.Name = "btnLeft";
             this.btnLeft.Size = new System.Drawing.Size(127, 60);
@@ -75,6 +77,7 @@
             // 
             // btnNer
             // 
+            this.btnNer.Enabled = false;
             this.btnNer.Location = new System.Drawing.Point(125, 208);
             this.btnNer.Name = "btnNer";
             this.btnNer.Size = new System.Drawing.Size(127, 60);
@@ -85,6 +88,7 @@
             // 
             // btnRight
             // 
+            this.btnRight.Enabled = false;
             this.btnRight.Location = new System.Drawing.Point(250, 142);
             this.btnRight.Name = "btnRight";
             this.btnRight.Size = new System.Drawing.Size(127, 60);
