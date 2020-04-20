@@ -36,11 +36,10 @@ namespace slutprogrammering
             int kort = rader * kolumner;
             if(kort%2 != 0)
             {
-                btnAdd.Text = "Funker ej";
+                MessageBox.Show("Ha ett jämnt antal kort");
             }
             else
             {
-                btnAdd.Text = "Hej";
                 Random random = new Random();
                 while (redokort < kort)
                 {
@@ -51,7 +50,7 @@ namespace slutprogrammering
                     int xvärde = 0;
                     int yvärde = 0;
                     string figuren = "";
-                    for(int i = 0; allakort.Count > i; i++)
+                    for(int i = 0; kort > i; i++)
                     {
                         if(slumpafigur < 2)
                         {
@@ -61,6 +60,7 @@ namespace slutprogrammering
                                 yvärde++;
                             }
                             Kort nyttkort = new Kort(xvärde, yvärde, figuren);
+                            allakort.Add(nyttkort);
                             redokort++;
 
                         }
@@ -74,23 +74,41 @@ namespace slutprogrammering
             }
             
         }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            dgwtabell.Rows.Add();
-            dgwtabell.Columns.Add();
-        }
-
-        private void btnRemove_Click(object sender, EventArgs e)
-        {
-            dgwtabell.Rows.Remove(dgwtabell.Rows.Count);
-        }
-
         private void btnValj_Click(object sender, EventArgs e)
         {
             
         }
 
-        
+       
+        private void btntaBortRad_Click(object sender, EventArgs e)
+        {
+            dgwtabell.Rows.Remove(dgwtabell.Rows[0]);
+            if(dgwtabell.Rows.Count == 0)
+            {
+                btntaBortRad.Enabled = false;
+            }
+        }
+
+        private void btntaBortKolumn_Click(object sender, EventArgs e)
+        {
+                dgwtabell.Columns.Remove(dgwtabell.Columns[0]);
+                if(dgwtabell.Columns.Count == 0)
+                {
+                    btntaBortKolumn.Enabled = false;
+                }
+        }
+
+        private void btnlaggTillRad_Click(object sender, EventArgs e)
+        {
+            dgwtabell.Rows.Add("");
+            btntaBortRad.Enabled = true;
+        }
+
+        private void btnlaggTillKolumn_Click(object sender, EventArgs e)
+        {
+            dgwtabell.Columns.Add("","");
+            btntaBortKolumn.Enabled = true;
+            
+        }
     }
 }

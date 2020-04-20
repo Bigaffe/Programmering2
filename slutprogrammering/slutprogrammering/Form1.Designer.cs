@@ -31,10 +31,14 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnTest = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnlaggTillRad = new System.Windows.Forms.Button();
+            this.btntaBortRad = new System.Windows.Forms.Button();
             this.btnValj = new System.Windows.Forms.Button();
             this.dgwtabell = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnlaggTillKolumn = new System.Windows.Forms.Button();
+            this.btntaBortKolumn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgwtabell)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,7 +49,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(351, 119);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(504, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -58,7 +62,7 @@
             // 
             // btnTest
             // 
-            this.btnTest.Location = new System.Drawing.Point(166, 66);
+            this.btnTest.Location = new System.Drawing.Point(187, 37);
             this.btnTest.Name = "btnTest";
             this.btnTest.Size = new System.Drawing.Size(75, 23);
             this.btnTest.TabIndex = 1;
@@ -66,29 +70,30 @@
             this.btnTest.UseVisualStyleBackColor = true;
             this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
-            // btnAdd
+            // btnlaggTillRad
             // 
-            this.btnAdd.Location = new System.Drawing.Point(90, 66);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 2;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnlaggTillRad.Location = new System.Drawing.Point(12, 66);
+            this.btnlaggTillRad.Name = "btnlaggTillRad";
+            this.btnlaggTillRad.Size = new System.Drawing.Size(88, 23);
+            this.btnlaggTillRad.TabIndex = 2;
+            this.btnlaggTillRad.Text = "Lägg till rad";
+            this.btnlaggTillRad.UseVisualStyleBackColor = true;
+            this.btnlaggTillRad.Click += new System.EventHandler(this.btnlaggTillRad_Click);
             // 
-            // btnRemove
+            // btntaBortRad
             // 
-            this.btnRemove.Location = new System.Drawing.Point(90, 95);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(75, 23);
-            this.btnRemove.TabIndex = 3;
-            this.btnRemove.Text = "Remove";
-            this.btnRemove.UseVisualStyleBackColor = true;
-            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            this.btntaBortRad.Enabled = false;
+            this.btntaBortRad.Location = new System.Drawing.Point(106, 66);
+            this.btntaBortRad.Name = "btntaBortRad";
+            this.btntaBortRad.Size = new System.Drawing.Size(75, 23);
+            this.btntaBortRad.TabIndex = 3;
+            this.btntaBortRad.Text = "Ta bort rad";
+            this.btntaBortRad.UseVisualStyleBackColor = true;
+            this.btntaBortRad.Click += new System.EventHandler(this.btntaBortRad_Click);
             // 
             // btnValj
             // 
-            this.btnValj.Location = new System.Drawing.Point(166, 95);
+            this.btnValj.Location = new System.Drawing.Point(187, 66);
             this.btnValj.Name = "btnValj";
             this.btnValj.Size = new System.Drawing.Size(75, 23);
             this.btnValj.TabIndex = 4;
@@ -99,20 +104,56 @@
             // dgwtabell
             // 
             this.dgwtabell.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwtabell.Location = new System.Drawing.Point(90, 161);
+            this.dgwtabell.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2});
+            this.dgwtabell.Location = new System.Drawing.Point(90, 186);
             this.dgwtabell.Name = "dgwtabell";
-            this.dgwtabell.Size = new System.Drawing.Size(240, 150);
+            this.dgwtabell.Size = new System.Drawing.Size(672, 252);
             this.dgwtabell.TabIndex = 5;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "";
+            this.Column2.Name = "Column2";
+            // 
+            // btnlaggTillKolumn
+            // 
+            this.btnlaggTillKolumn.Location = new System.Drawing.Point(12, 95);
+            this.btnlaggTillKolumn.Name = "btnlaggTillKolumn";
+            this.btnlaggTillKolumn.Size = new System.Drawing.Size(88, 23);
+            this.btnlaggTillKolumn.TabIndex = 6;
+            this.btnlaggTillKolumn.Text = "Lägg till kolumn";
+            this.btnlaggTillKolumn.UseVisualStyleBackColor = true;
+            this.btnlaggTillKolumn.Click += new System.EventHandler(this.btnlaggTillKolumn_Click);
+            // 
+            // btntaBortKolumn
+            // 
+            this.btntaBortKolumn.Enabled = false;
+            this.btntaBortKolumn.Location = new System.Drawing.Point(106, 95);
+            this.btntaBortKolumn.Name = "btntaBortKolumn";
+            this.btntaBortKolumn.Size = new System.Drawing.Size(75, 23);
+            this.btntaBortKolumn.TabIndex = 7;
+            this.btntaBortKolumn.Text = "Ta bort kolumn";
+            this.btntaBortKolumn.UseVisualStyleBackColor = true;
+            this.btntaBortKolumn.Click += new System.EventHandler(this.btntaBortKolumn_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btntaBortKolumn);
+            this.Controls.Add(this.btnlaggTillKolumn);
             this.Controls.Add(this.dgwtabell);
             this.Controls.Add(this.btnValj);
-            this.Controls.Add(this.btnRemove);
-            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btntaBortRad);
+            this.Controls.Add(this.btnlaggTillRad);
             this.Controls.Add(this.btnTest);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form1";
@@ -127,10 +168,14 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnTest;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Button btnlaggTillRad;
+        private System.Windows.Forms.Button btntaBortRad;
         private System.Windows.Forms.Button btnValj;
         private System.Windows.Forms.DataGridView dgwtabell;
+        private System.Windows.Forms.Button btnlaggTillKolumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.Button btntaBortKolumn;
     }
 }
 
