@@ -103,14 +103,20 @@
             // 
             // dgwtabell
             // 
+            this.dgwtabell.AllowUserToDeleteRows = false;
+            this.dgwtabell.AllowUserToResizeColumns = false;
+            this.dgwtabell.AllowUserToResizeRows = false;
             this.dgwtabell.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwtabell.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2});
-            this.dgwtabell.Location = new System.Drawing.Point(90, 186);
+            this.dgwtabell.Location = new System.Drawing.Point(90, 179);
+            this.dgwtabell.MultiSelect = false;
             this.dgwtabell.Name = "dgwtabell";
-            this.dgwtabell.Size = new System.Drawing.Size(672, 252);
+            this.dgwtabell.Size = new System.Drawing.Size(672, 259);
             this.dgwtabell.TabIndex = 5;
+            this.dgwtabell.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwtabell_CellClick);
+            this.dgwtabell.DoubleClick += new System.EventHandler(this.dgwtabell_DoubleClick);
             // 
             // Column1
             // 
@@ -173,9 +179,9 @@
         private System.Windows.Forms.Button btnValj;
         private System.Windows.Forms.DataGridView dgwtabell;
         private System.Windows.Forms.Button btnlaggTillKolumn;
+        private System.Windows.Forms.Button btntaBortKolumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.Button btntaBortKolumn;
     }
 }
 

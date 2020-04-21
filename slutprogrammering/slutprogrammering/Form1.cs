@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace slutprogrammering
 {
     public partial class Form1 : Form
     {
+        string forregaendekort = "";
+        int val = 0;
         List<Kort> allakort = new List<Kort>();
         public Form1()
         {
@@ -44,6 +47,7 @@ namespace slutprogrammering
                 while (redokort < kort)
                 {
                     int slumpafigur = random.Next(1, kort/2);
+
                     /*int slumpax = random.Next(1, kolumner - 1);
                     int slumpay = random.Next(1, rader - 1);*/
 
@@ -54,21 +58,25 @@ namespace slutprogrammering
                     {
                         if(slumpafigur < 2)
                         {
+                            xvärde++;
                             if(xvärde > kolumner)
                             {
-                                xvärde = 1;
+                                xvärde = 0;
                                 yvärde++;
                             }
                             Kort nyttkort = new Kort(xvärde, yvärde, figuren);
                             allakort.Add(nyttkort);
                             redokort++;
 
+
+                            Debug.WriteLine(figuren + "figur " );
                         }
 
                         /*Tittar så det inte redan finns ett kort med samma x och värde. Kom direkt på att jag kan gå 1,1 1,2 1,3 istället för detta onödiga systemet. Har kvar det för visa mitt mistag
                         if (slumpax != allakort[i].xposition && slumpay != allakort[i].yposition){}*/
                         
                     }
+
                    
                 }
             }
@@ -102,12 +110,55 @@ namespace slutprogrammering
         {
             dgwtabell.Rows.Add("");
             btntaBortRad.Enabled = true;
+
+           
+
         }
 
         private void btnlaggTillKolumn_Click(object sender, EventArgs e)
         {
             dgwtabell.Columns.Add("","");
             btntaBortKolumn.Enabled = true;
+            
+        }
+
+        private void dgwtabell_DoubleClick(object sender, EventArgs e)
+        {
+            
+
+            //int tempo = int.Parse(dgwtabell.SelectedCells[0].Value.ToString());
+            //MessageBox.Show(tempo.ToString());
+            /*int temp = int.Parse(dgwtabell.SelectedCells[0].Value.ToString());
+            MessageBox.Show(temp.ToString());*/
+
+            /*DataGridViewCell cell = dgwtabell.SelectedCells[0] as DataGridViewCell;
+            string value = cell.Value.ToString();
+            MessageBox.Show(value);*/
+
+
+            /*if(dgwtabell.SelectedCells[0] != null && dgwtabell.SelectedCells[0] != null)
+            {
+                MessageBox.Show("Testing");   
+            }*/
+
+        }
+
+        private void dgwtabell_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rad = e.RowIndex;
+            int kolumn = e.ColumnIndex;
+            MessageBox.Show(rad.ToString() + " " + kolumn.ToString());
+            if(val == 0)
+            {
+                
+                //allakort[kolumn + rad * dgwtabell.Columns.Count].xposition 
+                
+                //val++;
+            }
+            else
+            {
+                
+            }
             
         }
     }
