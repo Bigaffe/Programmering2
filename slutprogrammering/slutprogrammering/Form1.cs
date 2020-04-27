@@ -47,6 +47,7 @@ namespace slutprogrammering
                 while (redokort < kort)
                 {
                     int slumpafigur = random.Next(1, kort/2);
+                    if()
 
                     /*int slumpax = random.Next(1, kolumner - 1);
                     int slumpay = random.Next(1, rader - 1);*/
@@ -56,7 +57,7 @@ namespace slutprogrammering
                     string figuren = "";
                     for(int i = 0; kort > i; i++)
                     {
-                        if(slumpafigur < 2)
+                        if( < 2)
                         {
                             xvärde++;
                             if(xvärde > kolumner)
@@ -64,6 +65,7 @@ namespace slutprogrammering
                                 xvärde = 0;
                                 yvärde++;
                             }
+                            
                             Kort nyttkort = new Kort(xvärde, yvärde, figuren);
                             allakort.Add(nyttkort);
                             redokort++;
@@ -71,10 +73,14 @@ namespace slutprogrammering
 
                             Debug.WriteLine(figuren + "figur " );
                         }
+                        else
+                        {
+                            MessageBox.Show("Du tänkte fel mupp");
+                        }
 
                         /*Tittar så det inte redan finns ett kort med samma x och värde. Kom direkt på att jag kan gå 1,1 1,2 1,3 istället för detta onödiga systemet. Har kvar det för visa mitt mistag
                         if (slumpax != allakort[i].xposition && slumpay != allakort[i].yposition){}*/
-                        
+
                     }
 
                    
