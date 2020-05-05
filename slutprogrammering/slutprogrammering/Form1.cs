@@ -9,13 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 
+
 namespace slutprogrammering
 {
     public partial class Form1 : Form
     {
         string forregaendekort = "";
         int val = 0;
-        List<Kort> allakort = new List<Kort>();
+        List<Kort> allakort =  new List<Kort>();
+        //List<int> kortnummer = new List<int>();
         public Form1()
         {
             
@@ -32,59 +34,132 @@ namespace slutprogrammering
 
         private void btnTest_Click(object sender, EventArgs e)
         {
-
+            
             int kolumner = dgwtabell.ColumnCount;
             int rader = dgwtabell.RowCount;
             int redokort = 0;
-            int kort = rader * kolumner;
-            if(kort%2 != 0)
+            int antalkort = rader * kolumner;
+            if(antalkort%2 != 0)
             {
                 MessageBox.Show("Ha ett jämnt antal kort");
             }
             else
             {
-                Random random = new Random();
-                while (redokort < kort)
+                allakort.Clear();
+                List<int> intevald = new List<int>();
+                for(int j = 0; j < antalkort; j++)
                 {
-                    int slumpafigur = random.Next(1, kort/2);
-                    if()
-
-                    /*int slumpax = random.Next(1, kolumner - 1);
-                    int slumpay = random.Next(1, rader - 1);*/
-
-                    int xvärde = 0;
-                    int yvärde = 0;
-                    string figuren = "";
-                    for(int i = 0; kort > i; i++)
+                    intevald.Add(j);
+                    allakort.Add(new Kort(-1,-1,-1));
+                }
+                Debug.WriteLine(allakort.Count);
+                for(int i = 0; i < antalkort / 2; i++)
+                {
+                    while (true)
                     {
-                        if( < 2)
+                        Random random = new Random();
+                        int i1 = random.Next(0, antalkort - (i * 2));
+                        int i2 = random.Next(0, antalkort - (i * 2));
+                        int index1 = intevald[i1];
+                        int index2 = intevald[i2];
+                        Debug.WriteLine(index1 + " " + index2);
+                        if (index1 != index2 && allakort[index1].figuren == -1 && allakort[index2].figuren == -1)
                         {
-                            xvärde++;
-                            if(xvärde > kolumner)
+                            int x = index1 % kolumner;
+                            int y = index1 / kolumner;
+                            allakort[index1] = new Kort(x, y, i);
+                            x = index2 % kolumner;
+                            y = index2 / kolumner;
+                            allakort[index2] = new Kort(x, y, i);
+
+                            if(i1 < i2)
                             {
-                                xvärde = 0;
-                                yvärde++;
+                                intevald.RemoveAt(i1);
+                                intevald.RemoveAt(i2 -1);
                             }
-                            
-                            Kort nyttkort = new Kort(xvärde, yvärde, figuren);
-                            allakort.Add(nyttkort);
-                            redokort++;
+                            else
+                            {
+                                intevald.RemoveAt(i2);
+                                intevald.RemoveAt(i1 -1);
+                            }
+                            int n = intevald.Count;
+                            while(n > 1)
+                            {
+                                n--;
+                                int k = random.Next(n + 1);
+                                int temp = intevald[k];
+                                intevald[k] = intevald[n];
+                                intevald[n] = temp;
+                            }
+                                
+                            break;
 
-
-                            Debug.WriteLine(figuren + "figur " );
                         }
-                        else
+                    }
+                    Debug.WriteLine(i);
+                }
+                Debug.WriteLine("Klar");
+                for (int j = 0; j < antalkort; j++)
+                {
+                    Debug.WriteLine( "x:" + allakort[j].xposition + "   y:" + allakort[j].yposition + " || " + allakort[j].figuren);
+                }
+
+
+
+
+
+
+
+                /*while (redokort < antalkort)
+                {
+
+
+
+
+                    int slumpafigur = random.Next(1, antalkort/2);
+
+                    Kort a = new Kort(1, 1, 1);
+                    /*foreach(Kort k in allakort)
+                    {
+                        kortnummer.Add(k._figur)
+                    }*/
+
+                /*int slumpax = random.Next(1, kolumner - 1);
+                int slumpay = random.Next(1, rader - 1);
+
+                int xvärde = 0;
+                int yvärde = 0;
+                int figuren = 0;
+                for(int i = 0; antalkort > i; i++)
+                {
+                    if(  < 2)
+                    {
+                        xvärde++;
+                        if(xvärde > kolumner)
                         {
-                            MessageBox.Show("Du tänkte fel mupp");
+                            xvärde = 0;
+                            yvärde++;
                         }
 
-                        /*Tittar så det inte redan finns ett kort med samma x och värde. Kom direkt på att jag kan gå 1,1 1,2 1,3 istället för detta onödiga systemet. Har kvar det för visa mitt mistag
-                        if (slumpax != allakort[i].xposition && slumpay != allakort[i].yposition){}*/
+                        Kort nyttkort = new Kort(xvärde, yvärde, figuren);
+                        allakort.Add(nyttkort);
+                        redokort++;
 
+
+                        Debug.WriteLine(figuren + "figur " );
+                    }
+                    else
+                    {
+                        MessageBox.Show("Du tänkte fel mupp");
                     }
 
-                   
+                    /*Tittar så det inte redan finns ett kort med samma x och värde. Kom direkt på att jag kan gå 1,1 1,2 1,3 istället för detta onödiga systemet. Har kvar det för visa mitt mistag
+                    if (slumpax != allakort[i].xposition && slumpay != allakort[i].yposition){}
+
                 }
+
+
+            }*/
             }
             
         }

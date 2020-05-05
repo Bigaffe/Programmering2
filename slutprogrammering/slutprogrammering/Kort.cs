@@ -11,7 +11,7 @@ namespace slutprogrammering
         private int _xposition = 0;
         private int _yposition = 0;
         //private string _figur = "";
-        public enum _bilder
+        /*public enum _bilder
         {
             ingen = 0,
             elefant = 1,
@@ -24,15 +24,15 @@ namespace slutprogrammering
             ödla = 8,
             varg = 9,
             lejon = 10,
-        }
+        }*/
         private int _figur = 0;
                 
 
-        public Kort(int horisent, int vertikal, _bilder figur)
+        public Kort(int horisent, int vertikal, int figur)
         {
             this._xposition = horisent;
             this._yposition = vertikal;
-            this._figur = (int)figur;
+            this._figur = figur;
         }
 
         public int xposition
