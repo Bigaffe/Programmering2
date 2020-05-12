@@ -59,7 +59,7 @@ namespace slutprogrammering
         }
     }
 
-    class AllaFigurer
+    /*class AllaFigurer
     {
         private enum bilder
         {
@@ -91,7 +91,7 @@ namespace slutprogrammering
             }
         }
 
-    }
+    }*/
 
     
 }
