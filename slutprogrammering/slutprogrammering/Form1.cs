@@ -14,8 +14,8 @@ namespace slutprogrammering
 {
     public partial class Form1 : Form
     {
-        int figur1 = -1;
-        int figur2 = -1;
+        Kort figur1 = new Kort(-1,-1,-1);
+        Kort figur2 = new Kort(-1,-1,-1);
         int val = 0;
         ushort spelare = 1;
         int poangspelare1 = 0;
@@ -78,23 +78,32 @@ namespace slutprogrammering
 
         private void dgwtabell_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             int rad = e.RowIndex;
             int kolumn = e.ColumnIndex;
             //MessageBox.Show(kolumn.ToString() + " " + rad.ToString());
+            MessageBox.Show((allakort[dgwtabell.ColumnCount * rad + kolumn].figuren == -1) +" "+(figur1.xposition == kolumn) + " " + (figur1.yposition == rad));
+            if(allakort[dgwtabell.ColumnCount * rad + kolumn].figuren == -1 || (figur1.xposition == kolumn && figur1.yposition == rad)) 
+            {
+                MessageBox.Show("Vald ruta redan tagen");
+                return;
+            }
 
+            //if (allakort[dgwtabell.ColumnCount * rad + kolumn])
             foreach (Kort k1 in allakort)
             {
                 if (k1.xposition == kolumn && k1.yposition == rad)
                 {
                     MessageBox.Show(k1.figuren.ToString());
-                    if (figur1 == -1)
+                    if (val == 0)
                     {
-                        figur1 = k1.figuren;
+                        figur1 = k1;
+
 
                     }
                     else
                     {
-                        figur2 = k1.figuren;
+                        figur2 = k1;
                     }
                 }
             }
@@ -115,7 +124,7 @@ namespace slutprogrammering
                     spelare = 1;
                 }
 
-                figur1 = -1;figur2 = -1;
+                figur1 = new Kort(-1, -1, -1); figur2 = new Kort(-1, -1, -1); 
 
                 MessageBox.Show("Spelare bytad till " + spelare);
 
@@ -131,9 +140,11 @@ namespace slutprogrammering
         /// </summary>
         private void checkDou()
         {
+            
             //Kan antingen gå igenom de som har den figuren och sedan "märka" den som tagen, eller kan jag skicka med det via metoden, dock är x/y positionerna inlåsta i en loop.
-            if(figur1 == figur2)
+            if (figur1.figuren == figur2.figuren)
             {
+                
                 if (spelare == 1)
                 {
                     poangspelare1++;
@@ -149,12 +160,13 @@ namespace slutprogrammering
                 
                   foreach(Kort symbol in allakort)
                   {
-                    if(symbol.figuren == figur1)
+                    if(symbol.figuren == figur1.figuren || symbol.figuren == figur2.figuren)
                     {
+                       
                         int xpos = symbol.xposition;
                         int ypos = symbol.yposition;
                         dgwtabell.Rows[ypos].Cells[xpos].Style.BackColor = Color.Red;
-                        allakort[symbol].figuren = -1;
+                        allakort[dgwtabell.ColumnCount * ypos + xpos].figuren = -1;
                     }
 
                   }

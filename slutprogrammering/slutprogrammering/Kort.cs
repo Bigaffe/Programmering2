@@ -56,7 +56,12 @@ namespace slutprogrammering
             {
                 return _figur;
             }
+            set
+            {
+                _figur = value;
+            }
         }
+
     }
 
     /*class AllaFigurer
