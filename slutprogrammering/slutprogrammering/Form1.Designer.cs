@@ -32,6 +32,8 @@
             this.btnlaggTillRad = new System.Windows.Forms.Button();
             this.btntaBortRad = new System.Windows.Forms.Button();
             this.dgwtabell = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnlaggTillKolumn = new System.Windows.Forms.Button();
             this.btntaBortKolumn = new System.Windows.Forms.Button();
             this.btnSpara = new System.Windows.Forms.Button();
@@ -39,8 +41,8 @@
             this.lblnuvarandeSpelare = new System.Windows.Forms.Label();
             this.lblspelare1Poäng = new System.Windows.Forms.Label();
             this.lblspelare2Poäng = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgwtabell)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,6 +86,18 @@
             this.dgwtabell.TabIndex = 5;
             this.dgwtabell.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwtabell_CellClick);
             this.dgwtabell.DoubleClick += new System.EventHandler(this.dgwtabell_DoubleClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // btnlaggTillKolumn
             // 
@@ -153,17 +167,9 @@
             this.lblspelare2Poäng.TabIndex = 12;
             this.lblspelare2Poäng.Text = "Spelare 2: 0";
             // 
-            // Column1
+            // openFileDialog1
             // 
-            this.Column1.HeaderText = "";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form1
             // 
@@ -204,6 +210,8 @@
         private System.Windows.Forms.Label lblspelare2Poäng;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 

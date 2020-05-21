@@ -8,23 +8,41 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
-
+using System.IO;
 
 namespace slutprogrammering
 {
     public partial class Form1 : Form
     {
+        /// <summary>
+        /// Första gången man väljer ett
+        /// </summary>
         Kort figur1 = new Kort(-1,-1,-1);
+        /// <summary>
+        /// Andra kortet man väljer
+        /// </summary>
         Kort figur2 = new Kort(-1,-1,-1);
+        /// <summary>
+        /// Håller reda på vilket drag det är.
+        /// </summary>
         int val = 0;
+        ///<summary> Håller reda på vilken spelare spelar just nu </summary>
         ushort spelare = 1;
+        /// <summary>
+        /// Hur många poäng spelare 1 har
+        /// </summary>
         int poangspelare1 = 0;
+        /// <summary>
+        /// Hur många poäng spelare 2 har
+        /// </summary>
         int poangspelare2 = 0;
+        /// <summary>
+        /// Lista med alla kort som innehåller position i x och y och sedan figuren.
+        /// </summary>
         List<Kort> allakort =  new List<Kort>();
         
         public Form1()
         {
-            
             InitializeComponent();
         }
 
@@ -34,13 +52,6 @@ namespace slutprogrammering
         {
 
         }
-        //-----------------------------------
-
-
-
-
-
-
         //Lägg till och ta bort rader från spelbräddet
         private void btntaBortRad_Click(object sender, EventArgs e)
         {
@@ -77,8 +88,7 @@ namespace slutprogrammering
         //----------------------------------------------------------------------------------------------
 
         private void dgwtabell_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
+        {           
             int rad = e.RowIndex;
             int kolumn = e.ColumnIndex;
             //MessageBox.Show(kolumn.ToString() + " " + rad.ToString());
@@ -88,7 +98,6 @@ namespace slutprogrammering
                 MessageBox.Show("Vald ruta redan tagen");
                 return;
             }
-
             //if (allakort[dgwtabell.ColumnCount * rad + kolumn])
             foreach (Kort k1 in allakort)
             {
@@ -98,8 +107,6 @@ namespace slutprogrammering
                     if (val == 0)
                     {
                         figur1 = k1;
-
-
                     }
                     else
                     {
@@ -107,32 +114,23 @@ namespace slutprogrammering
                     }
                 }
             }
-            
-            
             val++;
             checkDou();
             if (val > 1 )
             {
+                dgwtabell.ClearSelection();
                 val = 0;
                 if (spelare == 1)
                 {
                     spelare = 2;
-                }
-                    
+                }  
                 else
                 {
                     spelare = 1;
                 }
-
                 figur1 = new Kort(-1, -1, -1); figur2 = new Kort(-1, -1, -1); 
-
                 MessageBox.Show("Spelare bytad till " + spelare);
-
-
-
             }
-
-            
         }
         ///<summary>
         /// Denna metoden tittar ifall de två valda korten är samma eller inte
@@ -140,11 +138,8 @@ namespace slutprogrammering
         /// </summary>
         private void checkDou()
         {
-            
-            //Kan antingen gå igenom de som har den figuren och sedan "märka" den som tagen, eller kan jag skicka med det via metoden, dock är x/y positionerna inlåsta i en loop.
             if (figur1.figuren == figur2.figuren)
             {
-                
                 if (spelare == 1)
                 {
                     poangspelare1++;
@@ -162,21 +157,17 @@ namespace slutprogrammering
                   {
                     if(symbol.figuren == figur1.figuren || symbol.figuren == figur2.figuren)
                     {
-                       
                         int xpos = symbol.xposition;
                         int ypos = symbol.yposition;
                         dgwtabell.Rows[ypos].Cells[xpos].Style.BackColor = Color.Red;
                         allakort[dgwtabell.ColumnCount * ypos + xpos].figuren = -1;
                     }
-
                   }
             }
             else
             {
                 
             }
-            //---------------------------------------
-
         }
         ///<summary>
         ///  Slumpa alla kort.
@@ -239,9 +230,7 @@ namespace slutprogrammering
                                 intevald[k] = intevald[n];
                                 intevald[n] = temp;
                             }
-
                             break;
-
                         }
                     }
                     Debug.WriteLine(i);
@@ -251,36 +240,106 @@ namespace slutprogrammering
                 {
                     Debug.WriteLine("x:" + allakort[j].xposition + "   y:" + allakort[j].yposition + " || " + allakort[j].figuren);
                 }
-
             }
-
         }
-    
-
-
-        //Vem är det som ska ta nästa drag, är det hens andra eller första?
-        //Vilka kort är borta
-        //Vilka kort är kvar
-        //Hur många poäng varje spelare har.
-
-        //Kort som redan är tagna ska inte kunna bli tagna igen, ifall ma klickar på ett kort som redan är taget så ska sitt drag inte tas bort.
-
         private void btnSpara_Click(object sender, EventArgs e)
         {
-
+            DialogResult resultat = saveFileDialog1.ShowDialog();
+            if(resultat == DialogResult.OK)
+            {
+                FileStream utström = new FileStream(saveFileDialog1.FileName,
+                                                            FileMode.OpenOrCreate, FileAccess.Write);
+                StreamWriter skrivare = new StreamWriter(utström);
+                skrivare.WriteLine(spelare + " " + poangspelare1 + " " + poangspelare2 + " " + val);
+                skrivare.WriteLine(dgwtabell.Columns.Count + " " + dgwtabell.Rows.Count);
+                skrivare.WriteLine(figur1.xposition + " " + figur1.yposition + " " + figur1.figuren);
+                foreach (Kort antal in allakort)
+                {
+                    skrivare.WriteLine(antal.xposition + " " + antal.yposition + " " + antal.figuren);
+                    //skrivare.Write(antal.yposition + " ");
+                    //skrivare.WriteLine(antal.figuren);
+                }
+                skrivare.Dispose();
+            }
         }
-        
         private void btnLaddaupp_Click(object sender, EventArgs e)
         {
+            dgwtabell.ClearSelection();
+            DialogResult resultat = openFileDialog1.ShowDialog();
+            if(resultat == DialogResult.OK)
+            {
+                FileStream inStröm = new FileStream(openFileDialog1.FileName, FileMode.Open,
+                                                    FileAccess.Read);
+                StreamReader läsare = new StreamReader(inStröm);
 
+
+                string rad = läsare.ReadLine();
+                string[] variabel = rad.Split(' ');
+                spelare = ushort.Parse(variabel[0]);
+                poangspelare1 = int.Parse(variabel[1]);
+                poangspelare2 = int.Parse(variabel[2]);
+                val = int.Parse(variabel[3]);
+
+                rad = läsare.ReadLine();
+                variabel = rad.Split(' ');
+                int kolumner = int.Parse(variabel[0]);
+                int rader = int.Parse(variabel[1]);
+
+                rad = läsare.ReadLine();
+                variabel = rad.Split(' ');
+                figur1 = new Kort(int.Parse(variabel[0]),int.Parse(variabel[1]),int.Parse(variabel[2]));
+
+                //Först tas alla nuvarande kort bort sedan läggs alla kort från filen inmattade i listan.
+                allakort.Clear();
+                for(int i = 0; i < (kolumner * rader); i++)
+                {
+                    rad = läsare.ReadLine();
+                    variabel = rad.Split(' ');
+                    Kort kort = new Kort(int.Parse(variabel[0]), int.Parse(variabel[1]), int.Parse(variabel[2]));
+                    allakort.Add(kort);
+                }
+                //Ser till att det blir rätt antal rader
+                while(dgwtabell.Rows.Count != rader )
+                {
+                    if(dgwtabell.Rows.Count < rader)
+                    {
+                        dgwtabell.Rows.Add("");
+                    }
+                    else
+                    {
+                        dgwtabell.Rows.Remove(dgwtabell.Rows[0]);
+                    }
+                }
+                //Ser till att det blir rätt antal kolumner
+                while (dgwtabell.Columns.Count != kolumner)
+                {
+                    if (dgwtabell.Columns.Count < kolumner)
+                    {
+                        dgwtabell.Columns.Add("", "");
+                    }
+                    else
+                    {
+                        dgwtabell.Columns.Remove(dgwtabell.Columns[0]);
+                    }
+                }
+                //Alla kort som har blivit tagna innan man sparade blir röda, så man kan ha koll.
+                foreach(Kort rödakort in allakort)
+                {
+                    if(rödakort.figuren == -1)
+                    {
+                        dgwtabell.Rows[rödakort.yposition].Cells[rödakort.xposition].Style.BackColor = Color.Red;
+                    }
+                }
+
+                lblnuvarandeSpelare.Text = "Spelare : " + spelare;
+                lblspelare1Poäng.Text = "Spelare 1: " + poangspelare1;
+                lblspelare2Poäng.Text = "Spelare 2: " + poangspelare2;
+
+                string filText = läsare.ReadToEnd();
+                Debug.WriteLine(filText);
+                läsare.Dispose();
+            }
         }
-
-
-
-
-
-
-
         private void Form1_Load(object sender, EventArgs e)
         {
             //Kunde inte hitta vart man la till en rad manuellt så den får läggas till automatiskt när programmet startas istället. 
