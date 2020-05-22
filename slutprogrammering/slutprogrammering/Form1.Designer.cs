@@ -145,9 +145,9 @@
             this.lblnuvarandeSpelare.AutoSize = true;
             this.lblnuvarandeSpelare.Location = new System.Drawing.Point(280, 12);
             this.lblnuvarandeSpelare.Name = "lblnuvarandeSpelare";
-            this.lblnuvarandeSpelare.Size = new System.Drawing.Size(43, 13);
+            this.lblnuvarandeSpelare.Size = new System.Drawing.Size(52, 13);
             this.lblnuvarandeSpelare.TabIndex = 10;
-            this.lblnuvarandeSpelare.Text = "Spelare";
+            this.lblnuvarandeSpelare.Text = "Spelare 1";
             // 
             // lblspelare1Poäng
             // 
