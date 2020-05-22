@@ -93,7 +93,7 @@ namespace slutprogrammering
             int rad = e.RowIndex;
             int kolumn = e.ColumnIndex;
             //MessageBox.Show(kolumn.ToString() + " " + rad.ToString());
-            MessageBox.Show((allakort[dgwtabell.ColumnCount * rad + kolumn].figuren == -1) +" "+(figur1.xposition == kolumn) + " " + (figur1.yposition == rad));
+            //MessageBox.Show((allakort[dgwtabell.ColumnCount * rad + kolumn].figuren == -1) +" "+(figur1.xposition == kolumn) + " " + (figur1.yposition == rad));
             if(allakort[dgwtabell.ColumnCount * rad + kolumn].figuren == -1 || (figur1.xposition == kolumn && figur1.yposition == rad)) 
             {
                 MessageBox.Show("Vald ruta redan tagen");
