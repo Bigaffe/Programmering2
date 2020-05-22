@@ -6,26 +6,25 @@ using System.Threading.Tasks;
 
 namespace slutprogrammering
 {
+    /// <summary>
+    /// Huvud objekt
+    /// </summary>
     class Kort
     {
+        /// <summary>
+        /// Placeringen i x led
+        /// </summary>
         private int _xposition = 0;
+        /// <summary>
+        /// Placering i y led
+        /// </summary>
         private int _yposition = 0;
-        //private string _figur = "";
-        /*public enum _bilder
-        {
-            ingen = 0,
-            elefant = 1,
-            älg = 2,
-            katt = 3,
-            hund = 4,
-            fisk = 5,
-            fiskmås = 6,
-            orm = 7,
-            ödla = 8,
-            varg = 9,
-            lejon = 10,
-        }*/
+        /// <summary>
+        /// Kortets figur (nummer)
+        /// </summary>
         private int _figur = 0;
+
+        //Tänkte använda mig av enum istället för int på figuren, men för att jag skulle behöva ha ett stort antal figurer så tog jag bort det, sedan hade jag lite problem med det i början vilket stärkte mitt val mer.
                 
 
         public Kort(int horisent, int vertikal, int figur)
@@ -35,6 +34,9 @@ namespace slutprogrammering
             this._figur = figur;
         }
 
+        /// <summary>
+        /// Hämtar _xposition ifall xposition nämns. Samma med figuren och yposition
+        /// </summary>
         public int xposition
         {
             get
@@ -64,39 +66,7 @@ namespace slutprogrammering
 
     }
 
-    /*class AllaFigurer
-    {
-        private enum bilder
-        {
-            ingen = 0,
-            elefant = 1,
-            älg = 2,
-            katt = 3,
-            hund = 4,
-            fisk = 5,
-            fiskmås = 6,
-            orm = 7,
-            ödla = 8,
-            varg = 9,
-            lejon = 10,
-
-
-        }
-        private string _figur = "";
-
-        public AllaFigurer(string bild)
-        {
-            this._figur = bild;
-        }
-        public string bilden
-        {
-            get
-            {
-                return _figur;
-            }
-        }
-
-    }*/
+    
 
     
 }

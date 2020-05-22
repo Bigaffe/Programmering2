@@ -77,6 +77,7 @@ namespace slutprogrammering
             btntaBortRad.Enabled = true;
             slumpa();
         }
+        
         private void btnlaggTillKolumn_Click(object sender, EventArgs e)
         {
             dgwtabell.Columns.Add("","");
@@ -178,20 +179,26 @@ namespace slutprogrammering
             int kolumner = dgwtabell.ColumnCount;
             int rader = dgwtabell.RowCount;
             int antalkort = rader * kolumner;
+            //Måste ha ett jämt antal kort
             if (antalkort % 2 != 0)
-            {
+            {// Kanske inte bästa iden att ha det komma upp varje gång man klickar
                 MessageBox.Show("Ha ett jämnt antal kort");
             }
             else
             {
+                //Vet att det tar data kraft varje gång man klickar för att lägga till en rad/kolumn. Ha slumpa som enskild knapp innan, men jag själv tyckte det var skönare med detta. Mindre att tänka på som användare.
                 allakort.Clear();
+                /// <summary>
+                /// Håller koll på vilka kort som inte har blivit valda änu.
+                /// </summary>
                 List<int> intevald = new List<int>();
                 for (int j = 0; j < antalkort; j++)
                 {
                     intevald.Add(j);
                     allakort.Add(new Kort(-1, -1, -1));
                 }
-                Debug.WriteLine(allakort.Count);
+                //Debug.WriteLine(allakort.Count);
+                //Gjorde det mesta av detta i början och jag vet vad som händer... men dumt av mig att inte skriva ner vad som händer. Då jag har svårt att kunna berätta vad som händer.
                 for (int i = 0; i < antalkort / 2; i++)
                 {
                     while (true)
@@ -201,7 +208,7 @@ namespace slutprogrammering
                         int i2 = random.Next(0, antalkort - (i * 2));
                         int index1 = intevald[i1];
                         int index2 = intevald[i2];
-                        Debug.WriteLine(index1 + " " + index2);
+                        //Debug.WriteLine(index1 + " " + index2);
                         if (index1 != index2 && allakort[index1].figuren == -1 && allakort[index2].figuren == -1)
                         {
                             int x = index1 % kolumner;
@@ -233,8 +240,9 @@ namespace slutprogrammering
                             break;
                         }
                     }
-                    Debug.WriteLine(i);
+                    //Debug.WriteLine(i);
                 }
+                //Går igenom alla kort: med placering och figur
                 Debug.WriteLine("Klar");
                 for (int j = 0; j < antalkort; j++)
                 {
@@ -250,14 +258,16 @@ namespace slutprogrammering
                 FileStream utström = new FileStream(saveFileDialog1.FileName,
                                                             FileMode.OpenOrCreate, FileAccess.Write);
                 StreamWriter skrivare = new StreamWriter(utström);
+                //
+                //Här skrivs spelare, poängställning och val in i filen
                 skrivare.WriteLine(spelare + " " + poangspelare1 + " " + poangspelare2 + " " + val);
+                //Hur många rader och kolumner som det finns på det nuvarande brädet. Viktig att ha samma dimensioner men kortens "kordinater".
                 skrivare.WriteLine(dgwtabell.Columns.Count + " " + dgwtabell.Rows.Count);
                 skrivare.WriteLine(figur1.xposition + " " + figur1.yposition + " " + figur1.figuren);
                 foreach (Kort antal in allakort)
                 {
+                    //Här inmatas ALLA kort in i filen
                     skrivare.WriteLine(antal.xposition + " " + antal.yposition + " " + antal.figuren);
-                    //skrivare.Write(antal.yposition + " ");
-                    //skrivare.WriteLine(antal.figuren);
                 }
                 skrivare.Dispose();
             }
@@ -301,10 +311,12 @@ namespace slutprogrammering
                 //Ser till att det blir rätt antal rader
                 while(dgwtabell.Rows.Count != rader )
                 {
+                    //Läger till rader tills det är lika många på brädet som filen
                     if(dgwtabell.Rows.Count < rader)
                     {
                         dgwtabell.Rows.Add("");
                     }
+                    //Om det är mer än tillräckligt många rader tar programmet bort rader tills det är lika många som det står i filen.
                     else
                     {
                         dgwtabell.Rows.Remove(dgwtabell.Rows[0]);
@@ -313,10 +325,12 @@ namespace slutprogrammering
                 //Ser till att det blir rätt antal kolumner
                 while (dgwtabell.Columns.Count != kolumner)
                 {
+                    //Ifall det är färre kolumner i applikationen än vad det står i filen lägger den tills det är lika många.
                     if (dgwtabell.Columns.Count < kolumner)
                     {
                         dgwtabell.Columns.Add("", "");
                     }
+                    //Tvärtom om det är färre i filen än vad det är på spelplannen
                     else
                     {
                         dgwtabell.Columns.Remove(dgwtabell.Columns[0]);
